@@ -1,13 +1,12 @@
-let person = {
-    firstName: 'Ardasher',
-    lastName: 'Bobokalonov',
-    age: 30,
-    address: {
-      city: 'New York',
-      state: 'NY'
-    },
-    hobbies: ['reading', 'sports']
+const obj1 = {
+    name: 'Ardasher',
+    greet(city) {
+      console.log(`Hello, ${this.name} from ${city}`);
+    }
   };
-  console.log(person.firstName); // "Ardasher"
-  console.log(person.address.city); // "New York"
-  console.log(person.hobbies[1]); // "sports"
+  
+  const obj2 = {
+    name: 'Mister'
+  };
+  
+  obj1.greet.call(obj2, 'New York'); // выводит "Hello, Mister from New York"
